@@ -1,12 +1,17 @@
 {
   "name": "firefox-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ceberous/firefox-wrapper"
+  },
+  "url": "https://github.com/ceberous/firefox-wrapper",  
   "license": "ISC",
   "dependencies": {
     "path": "^0.12.7",
