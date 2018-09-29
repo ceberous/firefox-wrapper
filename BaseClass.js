@@ -47,7 +47,7 @@ class FirefoxWrapperBase {
 		return false;
 	}
 
-	async launchRewrite() {
+	async launch() {
 		let wEX1 = exec( SET_DISPLAY + "node '" + path.join( __dirname , "FireFoxLauncher.js" ) + "' &" , { silent:true , async: false });
 		if ( wEX1.stderr.length > 1 ) { console.log( "Firefox-Wrapper --> ERROR --> Could not Launch FF Binary" ); return null; }
 		console.log( "Firefox-Wrapper --> Launched Firefox" );	
@@ -58,10 +58,8 @@ class FirefoxWrapperBase {
 	}
 
 	async openNewTab( wURL ) {
-		console.log( "Trying to Open New Tab" );
 		let escaped = shellescape( [ wURL ] );
 		let openNewTab = FF_NEW_TAB + escaped;
-		console.log( openNewTab );
 		let wResult = exec( SET_DISPLAY + openNewTab , { silent: true , async: false } );
 		if ( wResult.stderr != null && wResult.stderr.length > 1 ) { console.log( "Firefox-Wrapper --> ERROR --> " + wResult.stderr ); return null; }
 		await this.sleep( 1000 );
